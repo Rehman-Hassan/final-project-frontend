@@ -73,19 +73,19 @@
 
 @media (max-width: 768px) {
   .image {
-    height: 280px;
+    height: 350px;
   }
 }
 
 @media (max-width: 576px) {
   .image {
-    height: 240px;
+    height: 300px;
   }
 }
 
 @media (max-width: 480px) {
   .image {
-    height: 200px;
+    height: 280px;
   }
 }
 

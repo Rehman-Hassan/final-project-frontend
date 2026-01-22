@@ -1,10 +1,9 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import styles from "../../styles/sideImagesContainer.module.css";
 
 const DetailCenterImages = ({ images, selectedImage }) => {
-  const imageRefs = useRef([]);
-  const containerRef = useRef(null);
-  const [touchStart, setTouchStart] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
   // Check if mobile screen
@@ -17,58 +16,59 @@ const DetailCenterImages = ({ images, selectedImage }) => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  // Update index when selectedImage changes
   useEffect(() => {
-    // scroll to selected image
     const index = images.findIndex((img) => img === selectedImage);
-    
-    if (isMobile && containerRef.current) {
-      // For mobile carousel, scroll horizontally
-      const container = containerRef.current;
-      const img = imageRefs.current[index];
-      if (img) {
-        const scrollPosition = img.offsetLeft - (container.offsetWidth / 2) + (img.offsetWidth / 2);
-        container.scrollLeft = scrollPosition;
-      }
-    } else if (imageRefs.current[index]) {
-      // For desktop, scroll vertically
-      imageRefs.current[index].scrollIntoView({ behavior: "smooth", block: "start" });
+    if (index !== -1) {
+      setCurrentIndex(index);
     }
-  }, [selectedImage, images, isMobile]);
+  }, [selectedImage, images]);
 
-  // Handle touch events for swipe on mobile
-  const handleTouchStart = (e) => {
-    setTouchStart(e.touches[0].clientX);
+  const handlePrevious = () => {
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
-  const handleTouchEnd = (e) => {
-    if (!touchStart || !containerRef.current) return;
-
-    const touchEnd = e.changedTouches[0].clientX;
-    const diff = touchStart - touchEnd;
-
-    if (Math.abs(diff) > 50) {
-      // Swipe detected
-      const container = containerRef.current;
-      container.scrollLeft += diff > 0 ? 150 : -150;
-    }
-
-    setTouchStart(null);
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
-  return (
-    <div
-      className={styles.centerImageContainer}
-      ref={containerRef}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-    >
-      {images.map((img, idx) => (
-        <div
-          key={img + idx}
-          ref={(el) => (imageRefs.current[idx] = el)}
-        >
-          <img src={img} alt={`Product ${idx}`} className={styles.centerImage} />
+  if (isMobile) {
+    return (
+      <div className={styles.carouselWrapper}>
+        <button className={styles.arrowBtn} onClick={handlePrevious}>
+          <FiChevronLeft size={24} />
+        </button>
+
+        <div className={styles.carouselContainer}>
+          <img
+            src={images[currentIndex]}
+            alt={`Product ${currentIndex}`}
+            className={styles.carouselImage}
+          />
         </div>
+
+        <button className={styles.arrowBtn} onClick={handleNext}>
+          <FiChevronRight size={24} />
+        </button>
+
+        {/* Image counter */}
+        <div className={styles.imageCounter}>
+          {currentIndex + 1} / {images.length}
+        </div>
+      </div>
+    );
+  }
+
+  // Desktop view - show all images vertically
+  return (
+    <div className={styles.centerImageContainer}>
+      {images.map((img, idx) => (
+        <img
+          key={img + idx}
+          src={img}
+          alt={`Product ${idx}`}
+          className={styles.centerImage}
+        />
       ))}
     </div>
   );
