@@ -13,13 +13,42 @@
 }
 
 /* Mobile adjustments */
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .fav-img {
-    width: 120px;
+    width: 130px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fav-img {
+    width: 110px;
     height: 160px;
   }
 
   .fav-product {
     margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .fav-img {
+    width: 90px;
+    height: 130px;
+  }
+
+  .fav-product {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fav-img {
+    width: 70px;
+    height: 100px;
+  }
+
+  .fav-product {
+    margin-bottom: 6px;
   }
 }

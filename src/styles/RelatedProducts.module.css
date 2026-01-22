@@ -2,10 +2,36 @@
   margin-top: 60px;
 }
 
+@media (max-width: 768px) {
+  .wrapper {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    margin-top: 30px;
+  }
+}
+
 .heading {
   text-align: center;
   margin-bottom: 30px;
   font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .heading {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    margin-bottom: 15px;
+    font-size: 1rem;
+  }
 }
 
 .grid {
@@ -38,6 +64,30 @@
   cursor: pointer;
 }
 
+@media (max-width: 992px) {
+  .image {
+    height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .image {
+    height: 280px;
+  }
+}
+
+@media (max-width: 576px) {
+  .image {
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image {
+    height: 200px;
+  }
+}
+
 .info {
   padding-top: 10px;
   font-size: 13px;
@@ -46,6 +96,20 @@
 .info span {
   display: block;
   color: gray;
+}
+
+@media (max-width: 768px) {
+  .info {
+    padding-top: 8px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .info {
+    padding-top: 6px;
+    font-size: 11px;
+  }
 }
 
 /* ❤️ Heart Button */

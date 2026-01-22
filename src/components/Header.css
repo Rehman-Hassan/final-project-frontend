@@ -40,9 +40,21 @@
   flex: 0 0 auto;
 }
 
+@media (max-width: 768px) {
+  .header-right {
+    gap: 0.25rem;
+  }
+}
+
 @media (max-width: 576px) {
   .header-right {
     gap: 0.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-right {
+    gap: 0rem;
   }
 }
 
@@ -68,6 +80,36 @@
   color: #8b6f47;
 }
 
+@media (max-width: 768px) {
+  .hamburger-btn {
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0.35rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hamburger-btn {
+    font-size: 1.1rem;
+    margin-right: 0.3rem;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 0.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hamburger-btn {
+    font-size: 1rem;
+    margin-right: 0.2rem;
+    min-width: 32px;
+    min-height: 32px;
+    padding: 0.25rem;
+  }
+}
+
 /* Logo */
 .logo {
   display: flex;
@@ -82,6 +124,24 @@
   height: auto;
   object-fit: contain;
   filter: invert(1)
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo img {
+    max-width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    max-width: 60px;
+  }
 }
 
 /* Icon Button Styling */
@@ -103,6 +163,33 @@
 
 .icon-btn:hover {
   color: #8b6f47;
+}
+
+@media (max-width: 768px) {
+  .icon-btn {
+    font-size: 1.1rem;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0.35rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .icon-btn {
+    font-size: 0.95rem;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 0.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .icon-btn {
+    font-size: 0.85rem;
+    min-width: 32px;
+    min-height: 32px;
+    padding: 0.25rem;
+  }
 }
 
 /* Cart Icon Badge */
