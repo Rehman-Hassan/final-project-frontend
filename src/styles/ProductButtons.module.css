@@ -1,0 +1,64 @@
+/* Common button style */
+.btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+/* ADD BUTTON */
+.addBtn {
+  background-color: #1f2937; /* dark gray/black */
+  color: #fff;
+}
+.addBtn:hover {
+  background-color: #374151; /* slightly lighter */
+}
+
+/* CLOSE BUTTON */
+.closeBtn {
+  background-color: #6b7280; /* gray */
+  color: #fff;
+}
+.closeBtn:hover {
+  background-color: #4b5563; /* darker gray */
+}
+
+/* EDIT BUTTON */
+.editBtn {
+  border: none;
+  width: 70px;
+  background-color: #2563eb; /* blue */
+  color: #fff;
+}
+.editBtn:hover {
+  background-color: #1d4ed8; /* darker blue */
+}
+
+/* DELETE BUTTON */
+.deleteBtn {
+  border: none;
+  width: 70px;
+  background-color: #dc2626; /* red */
+  color: #fff;
+}
+.deleteBtn:hover {
+  background-color: #b91c1c; /* darker red */
+}
+
+/* Group for Edit/Delete in ProductList */
+.actionGroup {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.stickySidebar {
+  position: sticky;
+  top: 115px;
+  z-index: 50;
+  height: fit-content;
+}

@@ -1,0 +1,27 @@
+.marqueeDiv {
+  background-color: black;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1px;
+  position: relative;
+  z-index: 10000;
+}
+
+:global(marquee) {
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.international {
+  margin-right: 90px;
+}
+
+.call {
+  margin-right: 90px;
+}
+
+:global(marquee a) {
+  color: #ffffff;
+  text-decoration: none;
+}

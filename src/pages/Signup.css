@@ -1,0 +1,49 @@
+.SignUp-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  background-color: blanchedalmond;
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: gray;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 12px 12px 35px; /* padding-left for icon */
+  border: 1px solid gray;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.checkbox-icon {
+  color: gray;
+}
+
+#pay-now {
+  padding: 15px;
+  width: 100%;
+  background: black;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}

@@ -1,0 +1,26 @@
+
+.sideBarContainer {
+  width: 300px;
+  margin-left: 40px;
+  margin-right: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.select{
+  padding-top: 5px;
+  padding-bottom: 10px;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid gray;
+  
+}
+.productStyle{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 300px;
+  border: none;
+ 
+}

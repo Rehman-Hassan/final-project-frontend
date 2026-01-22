@@ -1,0 +1,25 @@
+/* ============================= */
+/* FAVOURITE PAGE STYLES        */
+/* ============================= */
+
+.fav-product {
+  cursor: pointer;
+}
+
+.fav-img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .fav-img {
+    width: 120px;
+    height: 160px;
+  }
+
+  .fav-product {
+    margin-bottom: 10px;
+  }
+}

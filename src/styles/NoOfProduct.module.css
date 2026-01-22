@@ -1,0 +1,70 @@
+/* sort by option */
+.sortBy {
+  border: none;
+}
+
+@media (min-width: 992px) {
+  .sortBy {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 992px) {
+  .sortBy {
+    font-size: 10px;
+  }
+}
+
+/* Grid buttons */
+.gridButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 8px;
+  margin: 0 3px;
+  transition: all 0.3s ease;
+}
+
+.gridButton:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.gridButton.active {
+  color: brown;
+  font-weight: bold;
+}
+
+.icon {
+  font-size: 18px;
+  margin: 0 5px;
+}
+
+/* position sticky */
+.position {
+  position: sticky;
+  z-index: 100;
+  background-color: white;
+  padding: 15px 0;
+  border-top: 0.25px solid rgba(165, 42, 42, 0.3);
+  border-bottom: 1px solid rgba(165, 42, 42, 0.3);
+}
+
+@media (max-width: 768px) {
+  .position {
+    top: 60px;
+    font-size: 10px;
+  }
+  
+  .icon {
+    font-size: 14px;
+    margin: 0 2px;
+  }
+}
+
+@media (min-width: 768px) {
+  .position {
+    top: 68px;
+    
+  }
+}

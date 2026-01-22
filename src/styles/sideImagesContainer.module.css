@@ -1,0 +1,136 @@
+.productName {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.productDescription {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.productPrice {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.sizeBtn {
+  padding: 8px 16px;
+  border: 1px solid #aaa;
+  background: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.sizeBtn:hover {
+  border-color: #000;
+}
+
+.sizeBtn.active {
+  color: black;
+  border-color: #000;
+}
+
+/* Quantity Selector */
+.quantitySelector {
+  margin-bottom: 20px;
+}
+
+.quantityControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.qtyBtn {
+  padding: 5px 12px;
+  border: 1px solid #aaa;
+  background: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.qtyBtn:hover {
+  background-color: #f0f0f0;
+}
+
+.qtyNumber {
+  min-width: 30px;
+  text-align: center;
+  font-size: 16px;
+}
+.centerImageContainer {
+  width: 100%;
+  height: auto;
+}
+
+.centerImage {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.centerImage:hover {
+  transform: scale(1.05);
+  border-color: black;
+}
+
+
+
+.sideImagesWrapper {
+  display: flex;
+  flex-direction: column; 
+  gap: 10px;
+  position: sticky;
+  top: -340px;
+}
+
+.sideImageContainer {
+  width: 80px;
+  height: 100px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 2px;
+  transition: all 0.2s;
+}
+
+.sideImageContainer:hover,
+.activeSide {
+  border: 1px solid gray;
+}
+
+.sideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+@media (max-width: 767px) {
+  .sideImagesWrapper {
+    /* position: static; */
+    flex-direction: row;       
+    flex-wrap: wrap;           
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;            
+  }
+
+  .sideImageContainer {
+    width: 70px;
+    height: 90px;
+  }
+  .centerImage:hover {
+    transform: none;
+    border-color: transparent;
+  }
+}

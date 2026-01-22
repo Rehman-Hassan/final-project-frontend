@@ -1,0 +1,79 @@
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-image: url('https://baroque.pk/cdn/shop/files/website_2_c84c912d-9577-47da-b60c-c3f387b4d6e6.jpg?v=1767079865&width=2000');
+  background-size: cover; 
+  background-position: center center; 
+  background-repeat: no-repeat;
+  animation-name: blurAnimation;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in;
+  animation-direction: alternate-reverse;
+  position: relative;
+}
+
+/* Blur animation for hero background */
+@keyframes blurAnimation {
+  to {
+    filter: blur(15px);
+  }
+}
+
+/* Button styling */
+.shopNow {
+  padding: 15px 23px;
+  border-radius: 0;
+  border: none;
+  background: white;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  letter-spacing: 3px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Button hover animation */
+.shopNow:hover {
+  animation: shopNowAnimation 2s ease-in 0.3s forwards;
+}
+
+@keyframes shopNowAnimation {
+  from {
+    background-color: white;
+    color: black;
+  }
+  to {
+    background-color: black;
+    color: white;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+  }
+
+  .shopNow {
+    bottom: 5%; 
+    padding: 10px 16px;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 60vh;
+  }
+
+  .shopNow {
+    padding: 8px 12px;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+}

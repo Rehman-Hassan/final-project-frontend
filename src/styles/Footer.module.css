@@ -1,0 +1,111 @@
+/* Footer.module.css */
+
+/* Main Footer Container */
+.footerContainer {
+  background-color: #2f2f2f;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: white;
+}
+
+/* Font Size for text blocks */
+.footerText {
+  font-size: 12px;
+}
+
+/* Section Headings */
+.footerHeading {
+  color: white;
+  font-weight: bolder;
+  margin-bottom: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.expandIcon {
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.footerHeading.collapsed .expandIcon {
+  transform: rotate(0deg);
+}
+
+.footerHeading.expanded .expandIcon {
+  transform: rotate(45deg);
+}
+
+/* Show icon only on small screens */
+@media (max-width: 768px) {
+  .expandIcon {
+    display: inline-block;
+  }
+}
+
+/* Hide content on small screens by default */
+@media (max-width: 768px) {
+  .footerContent {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    animation: slideDown 0.3s ease;
+  }
+
+  .footerContent.show {
+    display: block;
+    max-height: 500px;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
+
+/* Paragraphs */
+.footerPara {
+  color: #FFFFFFA6;
+  margin: 2px 0;
+}
+
+/* Bottom Row */
+.footerBottom {
+  margin-top: 30px;
+}
+
+/* Social Icons */
+.socialIcons {
+  display: flex;
+  gap: 15px;
+  color: white;
+}
+
+/* Visa Icons */
+.visaIcons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Select Dropdown */
+.countrySelect {
+  border: none;
+  background-color: transparent;
+}
+
+/* Flex Align */
+.alignCenter {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

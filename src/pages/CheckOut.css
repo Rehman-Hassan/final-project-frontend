@@ -1,0 +1,81 @@
+/* src/pages/Checkout.css */
+.checkout-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.checkout-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.checkout-items {
+  flex: 2;
+}
+
+.checkout-item {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 0;
+}
+
+.checkout-item img {
+  width: 100px;
+  height: 160px;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.item-details h5 {
+  margin: 0 0 0.5rem 0;
+}
+.item-details p {
+  margin: 0.2rem 0;
+}
+
+.checkout-summary {
+  flex: 1;
+  background-color: bisque;
+  padding: 4rem 1rem 1rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: fit-content;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+
+.summary-row.total {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.payment-method {
+  margin: 1rem 0;
+}
+
+.complete-order-btn {
+  margin-top: 100px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.complete-order-btn:hover {
+  background-color: #333;
+}
+
+@media(max-width: 768px){
+  .checkout-grid {
+    flex-direction: column;
+  }
+}

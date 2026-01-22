@@ -1,0 +1,46 @@
+ /* subscribe-button */
+ .btnSubscribe{
+    height: 35px;
+    width: 200px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+.btnSubscribe:hover{
+    animation: subscribeAnimation 1s ease-in ;
+}
+
+@keyframes subscribeAnimation{
+    from{
+        background-color: black;
+        color: white;
+    }
+    to{
+        background-color: white;
+        color: black;
+    }
+}
+/*Responsive */
+@media (max-width: 768px) {
+  .btnSubscribe {
+    width: 150px;
+    height: 35px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width:412px) {
+    .btnSubscribe{
+        margin-top: 10px;
+        width: 75%;
+        height: 60px;
+        font-size: 12px;
+    }
+}
