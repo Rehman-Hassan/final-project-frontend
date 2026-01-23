@@ -141,12 +141,13 @@
 
 .imageCounter {
   position: absolute;
-  bottom: -30px;
+  bottom: -50px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 14px;
   color: #666;
   font-weight: 600;
+  margin-top: 20px;
 }
 
 @media (max-width: 576px) {
