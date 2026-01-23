@@ -35,25 +35,32 @@ function Header() {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+      // Close profile dropdown on scroll
+      setProfileDropdown(false);
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close search when clicking outside
+  // Close search and profile dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (searchOpen && !e.target.closest('.search-wrapper')) {
         setSearchOpen(false);
       }
+      if (profileDropdown && !e.target.closest('.profile-wrapper')) {
+        setProfileDropdown(false);
+      }
     };
-    if (searchOpen) {
+    if (searchOpen || profileDropdown) {
       document.addEventListener('mousedown', handleClickOutside);
     }
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [searchOpen]);
+  }, [searchOpen, profileDropdown]);
 
   const totalItems = cart.reduce((acc, item) => acc + (item.quantity || 1), 0);
 
@@ -111,10 +118,10 @@ function Header() {
             <a onClick={() => { navigate("/product?mainCategory=SHAWLS"); setSidebarOpen(false); }}>Shawls</a>
             <a onClick={() => { navigate("/product?mainCategory=ESSEMBLES"); setSidebarOpen(false); }}>Essembles</a>
             <a onClick={() => { navigate("/product?mainCategory=DUPATTAS"); setSidebarOpen(false); }}>Dupattas</a>
-            <a onClick={() => { navigate("/product?mainCategory=FORMALS"); setSidebarOpen(false); }}>Formals</a>
-            <a onClick={() => { navigate("/product?mainCategory=SUMMER"); setSidebarOpen(false); }}>Summer</a>
-            <a onClick={() => { navigate("/product?mainCategory=VELVET"); setSidebarOpen(false); }}>Velvet</a>
-            <a onClick={() => { navigate("/product?mainCategory=WINTER"); setSidebarOpen(false); }}>Winter</a>
+            <a onClick={() => { navigate("/product?subCategory=FORMALS"); setSidebarOpen(false); }}>Formals</a>
+            <a onClick={() => { navigate("/product?subCategory=SUMMER"); setSidebarOpen(false); }}>Summer</a>
+            <a onClick={() => { navigate("/product?subCategory=VELVET"); setSidebarOpen(false); }}>Velvet</a>
+            <a onClick={() => { navigate("/product?subCategory=WINTER"); setSidebarOpen(false); }}>Winter</a>
           </div>
         </div>
       </div>
